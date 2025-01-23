@@ -2,27 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionTitle from "../common/section-title";
 import SectionSubtitle from "../common/section-subtitle";
-
-const sponsors = [
-  {
-    id: "sp-1",
-    name: "Sponsor 1",
-    logo: "/placeholder.svg",
-    url: "#",
-  },
-  {
-    id: "sp-2",
-    name: "Sponsor 2",
-    logo: "/placeholder.svg",
-    url: "#",
-  },
-  {
-    id: "sp-3",
-    name: "Sponsor 3",
-    logo: "/placeholder.svg",
-    url: "#",
-  },
-];
+import { sponsors } from "@/lib/data";
 
 export default function SponsorsSection({
   title = "Auspiciantes",
@@ -35,22 +15,23 @@ export default function SponsorsSection({
         <SectionSubtitle>{description}</SectionSubtitle>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+      <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
         {sponsors.map(({ id, name, logo, url }) => (
-          <Link
-            key={id}
-            href={url}
-            className="group mx-auto flex w-full items-center justify-center"
-            prefetch={false}
-          >
-            <Image
-              src={logo}
-              width={200}
-              height={100}
-              alt={`${name} Logo`}
-              className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center transition-opacity duration-300 group-hover:opacity-80"
-            />
-          </Link>
+          <div key={id}>
+            <Link
+              href={url}
+              className="group mx-auto flex w-full items-center justify-center"
+              prefetch={false}
+            >
+              <Image
+                src={logo}
+                width={200}
+                height={200}
+                alt={`${name} Logo`}
+                className="overflow-hidden rounded-lg object-fit object-center transition-opacity duration-300 group-hover:opacity-80"
+              />
+            </Link>
+          </div>
         ))}
       </div>
     </section>

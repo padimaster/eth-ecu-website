@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import CTAButton from "./cta-button";
+import CTAButton from "../common/cta-button";
 import Logo from "../common/logo";
 import Link from "next/link";
 
@@ -42,8 +42,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* CTA Button */}
-          <CTAButton />
+          {/* Call to Action Button */}
+          <div className="hidden md:flex items-center justify-end">
+            <CTAButton />
+          </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
