@@ -1,0 +1,39 @@
+{
+  "name": "ETH Ecuador",
+  "short_name": "ETH EC",
+  "description": "Comunidad de Ethereum en Ecuador",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "orientation": "portrait",
+  "lang": "es",
+  "dir": "ltr",
+  "categories": ["technology", "education", "community"],
+  "screenshots": [
+    {
+      "src": "/screenshot1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "label": "Homepage of ETH Ecuador"
+    }
+  ]
+}
