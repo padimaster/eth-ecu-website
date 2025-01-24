@@ -12,8 +12,7 @@ const Navbar = () => {
   const navItems = [
     { label: "Inicio", href: "/" },
     { label: "Eventos", href: "/eventos" },
-    { label: "Nosotros", href: "/sobre-nosotros" },
-    { label: "Contacto", href: "/contacto" },
+    { label: "Oportunidades", href: "/oportunidades" },
   ];
 
   return (
