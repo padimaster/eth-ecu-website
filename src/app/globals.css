@@ -2,78 +2,583 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  /* Updated theme with @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  * {
+    border-color: hsl(var(--border));
+    outline-color: hsl(var(--ring) / 0.5);
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}kgrounds and ETH Ecuador accent colors */
+  --background: oklch(0.98 0.01 320); /* Soft pastel pink-cream */
+  --foreground: oklch(0.15 0.02 280); /* Deep navy for text */
+  --card: oklch(0.99 0.005 300); /* Very light pastel card */
+  --card-foreground: oklch(0.15 0.02 280);
+  --popover: oklch(0.99 0.005 300);
+  --popover-foreground: oklch(0.15 0.02 280);
+
+  /* Enhanced ETH Ecuador colors - emphasizing yellow, blue, red with green accent */
+  --primary: oklch(0.55 0.2 240); /* Stronger ETH Ecuador blue */
+  --primary-foreground: oklch(0.98 0.01 320);
+  --secondary: oklch(0.85 0.15 85); /* Brighter yellow accent */
+  --secondary-foreground: oklch(0.15 0.02 280);
+
+  /* ETH Ecuador brand colors */
+  --color-ecuador-yellow: oklch(0.8 0.18 85); /* Vibrant yellow */
+  --color-ecuador-blue: oklch(0.55 0.2 240); /* Strong blue */
+  --color-ecuador-red: oklch(0.6 0.22 25); /* Bold red */
+  --color-ecuador-green: oklch(0.6 0.18 140); /* Accent green */
+  --color-ecuador-green-light: oklch(0.75 0.15 140); /* Light green */
+  --color-ecuador-green-soft: oklch(0.9 0.08 140); /* Very light green for backgrounds */
+
+  /* Pastel backgrounds for sections */
+  --color-pastel-yellow: oklch(0.95 0.05 85);
+  --color-pastel-blue: oklch(0.95 0.05 240);
+  --color-pastel-red: oklch(0.95 0.05 25);
+  --color-pastel-mint: oklch(0.95 0.05 140);
+  --color-pastel-green: oklch(0.96 0.04 140); /* Added pastel green */
+
+  --muted: oklch(0.95 0.02 300); /* Light pastel muted */
+  --muted-foreground: oklch(0.45 0.02 280);
+  --accent: oklch(0.92 0.03 180); /* Soft mint accent */
+  --accent-foreground: oklch(0.15 0.02 280);
+  --destructive: oklch(0.6 0.22 25); /* Using Ecuador red */
+  --destructive-foreground: oklch(0.98 0.01 320);
+  --border: oklch(0.9 0.02 300);
+  --input: oklch(0.95 0.02 300);
+  --ring: oklch(0.55 0.2 240); /* Ecuador blue */
+
+  /* Updated chart colors to emphasize Ecuador colors */
+  --chart-1: oklch(0.55 0.2 240); /* Ecuador Blue */
+  --chart-2: oklch(0.8 0.18 85); /* Ecuador Yellow */
+  --chart-3: oklch(0.6 0.22 25); /* Ecuador Red */
+  --chart-4: oklch(0.6 0.18 140); /* Ecuador Green */
+  --chart-5: oklch(0.65 0.1 300); /* Purple accent */
+
+  --radius: 1rem; /* Slightly larger radius for modern feel */
+  --sidebar: oklch(0.98 0.01 320);
+  --sidebar-foreground: oklch(0.15 0.02 280);
+  --sidebar-primary: oklch(0.45 0.15 240);
+  --sidebar-primary-foreground: oklch(0.98 0.01 320);
+  --sidebar-accent: oklch(0.92 0.03 180);
+  --sidebar-accent-foreground: oklch(0.15 0.02 280);
+  --sidebar-border: oklch(0.9 0.02 300);
+  --sidebar-ring: oklch(0.45 0.15 240);
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 89 71% 28%;
-    --secondary: 213 97% 32%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --focus: 45 100% 60%;
-    --focus-foreground: 0 0% 0%;
-    --primary-gradient: linear-gradient(135deg, #3f721d 0%, #034ea2 100%);
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --radius: 0.5rem;
-    --focus: 45 100% 60%;
-    --focus-foreground: 0 0% 100%;
-    --primary-gradient: linear-gradient(135deg, #1a4d0f 0%, #022b5c 100%);
-  }
+.dark {
+  --background: oklch(0.12 0.02 280);
+  --foreground: oklch(0.98 0.01 320);
+  --card: oklch(0.15 0.02 280);
+  --card-foreground: oklch(0.98 0.01 320);
+  --popover: oklch(0.15 0.02 280);
+  --popover-foreground: oklch(0.98 0.01 320);
+  --primary: oklch(0.65 0.15 240);
+  --primary-foreground: oklch(0.12 0.02 280);
+  --secondary: oklch(0.25 0.03 280);
+  --secondary-foreground: oklch(0.98 0.01 320);
+  --muted: oklch(0.25 0.03 280);
+  --muted-foreground: oklch(0.65 0.02 280);
+  --accent: oklch(0.25 0.03 280);
+  --accent-foreground: oklch(0.98 0.01 320);
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.98 0.01 320);
+  --border: oklch(0.25 0.03 280);
+  --input: oklch(0.25 0.03 280);
+  --ring: oklch(0.65 0.15 240);
+  --chart-1: oklch(0.65 0.15 240);
+  --chart-2: oklch(0.75 0.12 85);
+  --chart-3: oklch(0.65 0.18 25);
+  --chart-4: oklch(0.65 0.15 140);
+  --chart-5: oklch(0.65 0.1 300);
+  --sidebar: oklch(0.12 0.02 280);
+  --sidebar-foreground: oklch(0.98 0.01 320);
+  --sidebar-primary: oklch(0.65 0.15 240);
+  --sidebar-primary-foreground: oklch(0.12 0.02 280);
+  --sidebar-accent: oklch(0.25 0.03 280);
+  --sidebar-accent-foreground: oklch(0.98 0.01 320);
+  --sidebar-border: oklch(0.25 0.03 280);
+  --sidebar-ring: oklch(0.65 0.15 240);
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
+    outline-color: hsl(var(--ring) / 0.5);
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
+}
+
+/* Enhanced animations and Ecuador-themed effects */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 200% 0;
+  }
+  50% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+/* Updated highlight badges to cartoon bubble style with Ecuador pastel colors */
+.highlight-badge {
+  position: relative;
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+}
+
+.highlight-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, oklch(0.8 0.18 85 / 0.3), oklch(0.55 0.2 240 / 0.3), oklch(0.6 0.22 25 / 0.3));
+  border-radius: 20px;
+  z-index: -1;
+  transform: rotate(2deg);
+}
+
+/* Cartoon bubble variants with Ecuador colors */
+.highlight-bubble-yellow {
+  position: relative;
+  display: inline-block;
+  padding: 6px 14px;
+  background: oklch(0.95 0.08 85);
+  color: oklch(0.4 0.15 85);
+  border-radius: 25px;
+  font-weight: 600;
+  transform: rotate(-1.5deg);
+  transition: all 0.3s ease;
+  border: 2px solid oklch(0.8 0.18 85 / 0.4);
+  box-shadow: 0 4px 12px oklch(0.8 0.18 85 / 0.2);
+}
+
+.highlight-bubble-blue {
+  position: relative;
+  display: inline-block;
+  padding: 6px 14px;
+  background: oklch(0.95 0.08 240);
+  color: oklch(0.4 0.15 240);
+  border-radius: 25px;
+  font-weight: 600;
+  transform: rotate(1.2deg);
+  transition: all 0.3s ease;
+  border: 2px solid oklch(0.55 0.2 240 / 0.4);
+  box-shadow: 0 4px 12px oklch(0.55 0.2 240 / 0.2);
+}
+
+.highlight-bubble-red {
+  position: relative;
+  display: inline-block;
+  padding: 6px 14px;
+  background: oklch(0.95 0.08 25);
+  color: oklch(0.4 0.15 25);
+  border-radius: 25px;
+  font-weight: 600;
+  transform: rotate(-0.8deg);
+  transition: all 0.3s ease;
+  border: 2px solid oklch(0.6 0.22 25 / 0.4);
+  box-shadow: 0 4px 12px oklch(0.6 0.22 25 / 0.2);
+}
+
+.highlight-bubble-green {
+  position: relative;
+  display: inline-block;
+  padding: 6px 14px;
+  background: oklch(0.95 0.08 140);
+  color: oklch(0.4 0.15 140);
+  border-radius: 25px;
+  font-weight: 600;
+  transform: rotate(1.8deg);
+  transition: all 0.3s ease;
+  border: 2px solid oklch(0.6 0.18 140 / 0.4);
+  box-shadow: 0 4px 12px oklch(0.6 0.18 140 / 0.2);
+}
+
+/* Hover effects for cartoon bubbles */
+.highlight-bubble-yellow:hover,
+.highlight-bubble-blue:hover,
+.highlight-bubble-red:hover,
+.highlight-bubble-green:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Added Ecuador-themed gradient text effects */
+.gradient-text-ecuador {
+  background: linear-gradient(135deg, var(--color-ecuador-yellow), var(--color-ecuador-blue), var(--color-ecuador-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.underline-ecuador {
+  position: relative;
+}
+
+.underline-ecuador::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-ecuador-yellow), var(--color-ecuador-blue), var(--color-ecuador-red));
+  border-radius: 2px;
+}
+
+/* Added hex pattern for blockchain theme */
+.hex-pattern {
+  background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+  background-size: 20px 20px;
+}
+
+/* Cartoon button styles matching the highlight bubbles */
+.btn-cartoon-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, oklch(0.8 0.18 85), oklch(0.55 0.2 240), oklch(0.6 0.22 25));
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+  border: 3px solid oklch(0.9 0.05 85);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-cartoon-primary:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cartoon-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: oklch(0.98 0.02 240);
+  color: oklch(0.55 0.2 240);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  transform: rotate(1.2deg);
+  transition: all 0.3s ease;
+  border: 3px solid oklch(0.55 0.2 240 / 0.4);
+  box-shadow: 0 6px 20px oklch(0.55 0.2 240 / 0.15);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-cartoon-secondary:hover {
+  transform: rotate(0deg) scale(1.05);
+  background: oklch(0.55 0.2 240 / 0.1);
+  box-shadow: 0 8px 25px oklch(0.55 0.2 240 / 0.2);
+}
+
+.btn-cartoon-yellow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: oklch(0.8 0.18 85);
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  transform: rotate(-0.8deg);
+  transition: all 0.3s ease;
+  border: 3px solid oklch(0.9 0.05 85);
+  box-shadow: 0 6px 20px oklch(0.8 0.18 85 / 0.3);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-cartoon-yellow:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 8px 25px oklch(0.8 0.18 85 / 0.4);
+}
+
+.btn-cartoon-green {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: oklch(0.6 0.18 140);
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  transform: rotate(1.5deg);
+  transition: all 0.3s ease;
+  border: 3px solid oklch(0.75 0.15 140);
+  box-shadow: 0 6px 20px oklch(0.6 0.18 140 / 0.3);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-cartoon-green:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 8px 25px oklch(0.6 0.18 140 / 0.4);
+}
+
+/* Enhanced cartoon button with white circle arrow */
+.btn-cartoon-enhanced {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 28px;
+  background: linear-gradient(135deg, oklch(0.8 0.18 85), oklch(0.55 0.2 240), oklch(0.6 0.22 25));
+  color: white;
+  border-radius: 35px;
+  font-weight: 700;
+  font-size: 18px;
+  transform: rotate(-2deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 4px solid oklch(0.95 0.05 85);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.btn-cartoon-enhanced::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, oklch(0.9 0.1 85), oklch(0.7 0.15 240), oklch(0.75 0.18 25));
+  border-radius: 35px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-cartoon-enhanced:hover::before {
+  opacity: 1;
+}
+
+.btn-cartoon-enhanced:hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25), 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.btn-cartoon-enhanced .arrow-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.btn-cartoon-enhanced:hover .arrow-circle {
+  transform: translateX(4px) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cartoon-enhanced .arrow-circle svg {
+  width: 16px;
+  height: 16px;
+  color: oklch(0.55 0.2 240);
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.btn-cartoon-enhanced:hover .arrow-circle svg {
+  transform: translateX(1px);
+}
+
+/* Green-only version of the enhanced cartoon button */
+.btn-cartoon-enhanced-green {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 28px;
+  background: linear-gradient(135deg, var(--color-ecuador-green), var(--color-ecuador-green-light));
+  color: white;
+  border-radius: 35px;
+  font-weight: 700;
+  font-size: 18px;
+  transform: rotate(-2deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 4px solid oklch(0.95 0.05 140);
+  box-shadow: 0 8px 25px oklch(0.6 0.18 140 / 0.3), 0 4px 12px oklch(0.6 0.18 140 / 0.2);
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.btn-cartoon-enhanced-green::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--color-ecuador-green-light), var(--color-ecuador-green));
+  border-radius: 35px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-cartoon-enhanced-green:hover::before {
+  opacity: 1;
+}
+
+.btn-cartoon-enhanced-green:hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 0 12px 35px oklch(0.6 0.18 140 / 0.4), 0 6px 18px oklch(0.6 0.18 140 / 0.25);
+}
+
+.btn-cartoon-enhanced-green .arrow-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.btn-cartoon-enhanced-green:hover .arrow-circle {
+  transform: translateX(4px) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cartoon-enhanced-green .arrow-circle svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-ecuador-green);
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.btn-cartoon-enhanced-green:hover .arrow-circle svg {
+  transform: translateX(1px);
+}
+
+/* Turtle logo animation */
+.turtle-float {
+  animation: float 8s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+/* Subtle blue accent utilities and enhancements */
+/* Subtle blue glow effect for cards and elements */
+.blue-glow-subtle {
+  box-shadow: 0 0 20px oklch(0.55 0.2 240 / 0.08), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blue-glow-subtle:hover {
+  box-shadow: 0 0 30px oklch(0.55 0.2 240 / 0.12), 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Subtle blue border accent */
+.blue-border-accent {
+  border: 1px solid oklch(0.55 0.2 240 / 0.15);
+}
+
+/* Blue shimmer effect for text */
+.blue-shimmer {
+  background: linear-gradient(90deg, var(--color-foreground) 0%, oklch(0.55 0.2 240) 50%, var(--color-foreground) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Subtle blue accent dots */
+.blue-accent-dots::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 6px;
+  height: 6px;
+  background: oklch(0.55 0.2 240 / 0.4);
+  border-radius: 50%;
+  box-shadow: 12px 0 0 oklch(0.55 0.2 240 / 0.3), 24px 0 0 oklch(0.55 0.2 240 / 0.2);
 }
