@@ -54,6 +54,6 @@ export const sponsors = [
     id: "sp-3",
     name: "ETH Ecuador",
     logo: "/logos/full-logo-black 1000x600.png",
-    url: "https://twitter.com/EthTricolor",
+    url: "https://x.com/EthTricolor",
   },
 ];
